@@ -29,6 +29,16 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "_headers",
+                "input": "src/",
+                "output": "/"
+              },
+              {
+                "glob": "_redirects",
+                "input": "src/",
+                "output": "/"
               }
             ],
             "styles": [
@@ -103,6 +113,16 @@
             "assets": [
               {
                 "glob": "favicon.ico",
+                "input": "src/",
+                "output": "/"
+              },
+              {
+                "glob": "_headers",
+                "input": "src/",
+                "output": "/"
+              },
+              {
+                "glob": "_redirects",
                 "input": "src/",
                 "output": "/"
               },
