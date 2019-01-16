@@ -12,7 +12,7 @@ export class StorePage {
   }
 
   open() {
-    window.open('https://shop.spreadshirt.se/FAsFotos', '_system');
+    window.open('https://shop.spreadshirt.se/FAsFotos', '_blank', 'noopener=yes');
     // this.iab.create('https://shop.spreadshirt.se/FAsFotos', '_blank');
   }
 }
