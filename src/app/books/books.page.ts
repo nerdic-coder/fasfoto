@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-books',
@@ -8,14 +7,22 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 })
 export class BooksPage {
 
-  constructor(private iab: InAppBrowser) {
+  constructor() {
   }
 
   gotoIbooks() {
-    this.iab.create('https://itun.es/se/-dfxcb.l', '_blank');
+    const a = document.createElement('a');
+    a.href = 'https://itun.es/se/-dfxcb.l';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.click();
   }
 
   gotoAmazon() {
-    this.iab.create('https://www.amazon.com/dp/1320985270', '_blank');
+    const a = document.createElement('a');
+    a.href = 'https://www.amazon.com/dp/1320985270';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.click();
   }
 }

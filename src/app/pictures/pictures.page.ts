@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-pictures',
@@ -8,10 +7,14 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 })
 export class PicturesPage {
 
-  constructor(private iab: InAppBrowser) {
+  constructor() {
   }
 
   open() {
-    this.iab.create('https://www.mostphotos.com/sv-se/user/fasfotos', '_blank');
+    const a = document.createElement('a');
+    a.href = 'https://www.mostphotos.com/sv-se/user/fasfotos';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.click();
   }
 }
