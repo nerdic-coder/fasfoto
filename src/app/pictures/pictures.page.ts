@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+// import RSSParser from 'rss-parser';
+
+declare var RSSParser;
 
 @Component({
   selector: 'app-pictures',
   templateUrl: 'pictures.page.html',
   styleUrls: ['pictures.page.scss']
 })
-export class PicturesPage {
+export class PicturesPage implements OnInit  {
 
-  constructor() {
+  pictures: any;
+
+  async ngOnInit() {
+    const parser = new RSSParser();
+    const feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://queryfeed.net/instagram?q=r3l04d3d');
+    this.pictures = feed.items;
   }
 
   open() {

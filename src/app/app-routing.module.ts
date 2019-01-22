@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: './pictures/pictures.module#PicturesPageModule'
   },
   {
+    path: 'videos',
+    loadChildren: './videos/videos.module#VideosPageModule'
+  },
+  {
     path: 'books',
     loadChildren: './books/books.module#BooksPageModule'
   },

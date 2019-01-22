@@ -18,14 +18,19 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Bilder',
+      url: '/pictures',
+      icon: 'images'
+    },
+    {
+      title: 'Videor',
+      url: '/videos',
+      icon: 'videocam'
+    },
+    {
       title: 'Butik',
       url: '/store',
       icon: 'appstore'
-    },
-    {
-      title: 'Köp Bilder',
-      url: '/pictures',
-      icon: 'images'
     },
     {
       title: 'Böcker',

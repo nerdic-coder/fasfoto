@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Videor </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center padding>
+  <ion-list>
+    <ion-card *ngFor="let video of videos">
+      <iframe
+        [src]="video.src"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <ion-card-content>{{ video.title }}</ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="block" color="primary" (click)="open()"
+  >Prenumerera på min Youtube-kanal</ion-button
+  >
+</ion-footer>
