@@ -9,3 +9,9 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+ion-content, ion-footer {
+    --padding-end: env(safe-area-inset-right);
+    --padding-start: env(safe-area-inset-left);
+    --padding-bottom: env(safe-area-inset-bottom);
+}

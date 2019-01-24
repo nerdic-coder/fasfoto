@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-social',
@@ -7,62 +9,89 @@ import { Component } from '@angular/core';
 })
 export class SocialPage {
 
-  constructor() {
+  constructor(
+    private iab: InAppBrowser,
+    private platform: Platform
+  ) {
   }
 
   gotoYoutube() {
-    const a = document.createElement('a');
-    a.href = 'https://www.youtube.com/user/AXFR3DD3';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://www.youtube.com/user/AXFR3DD3', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://www.youtube.com/user/AXFR3DD3';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 
   gotoFacebook() {
-    const a = document.createElement('a');
-    a.href = 'https://www.facebook.com/pg/FAsFotos/';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://www.facebook.com/pg/FAsFotos/', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://www.facebook.com/pg/FAsFotos/';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 
   gotoInstagram() {
-    const a = document.createElement('a');
-    a.href = 'https://www.instagram.com/r3l04d3d/';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://www.instagram.com/r3l04d3d/', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://www.instagram.com/r3l04d3d/';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 
   gotoTwitter() {
-    const a = document.createElement('a');
-    a.href = 'https://twitter.com/AXFR3DD3';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://twitter.com/AXFR3DD3', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://twitter.com/AXFR3DD3';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 
   gotoFolketsblad() {
     const a = document.createElement('a');
     a.href = 'http://folketsblad.com/medlemmar/axfr3dd3/profile/';
-    a.target = '_blank';
+    a.target = '_system';
     a.rel = 'noopener';
     a.click();
   }
 
   gotoSnapchat() {
-    const a = document.createElement('a');
-    a.href = 'https://www.snapchat.com/add/R3l04d3d';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://www.snapchat.com/add/R3l04d3d', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://www.snapchat.com/add/R3l04d3d';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 
   gotoPaypal() {
-    const a = document.createElement('a');
-    a.href = 'https://www.paypal.me/Reloaded88';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://www.paypal.me/Reloaded88', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://www.paypal.me/Reloaded88';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 }

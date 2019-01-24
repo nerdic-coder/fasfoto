@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-store',
@@ -7,14 +9,21 @@ import { Component } from '@angular/core';
 })
 export class StorePage {
 
-  constructor() {
+  constructor(
+    private iab: InAppBrowser,
+    private platform: Platform
+  ) {
   }
 
   open() {
-    const a = document.createElement('a');
-    a.href = 'https://shop.spreadshirt.se/FAsFotos';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://shop.spreadshirt.se/FAsFotos', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://shop.spreadshirt.se/FAsFotos';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 }

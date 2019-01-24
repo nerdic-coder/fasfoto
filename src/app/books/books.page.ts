@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-books',
@@ -7,22 +9,33 @@ import { Component } from '@angular/core';
 })
 export class BooksPage {
 
-  constructor() {
+  constructor(
+    private iab: InAppBrowser,
+    private platform: Platform
+  ) {
   }
 
   gotoIbooks() {
-    const a = document.createElement('a');
-    a.href = 'https://itun.es/se/-dfxcb.l';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://itun.es/se/-dfxcb.l', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://itun.es/se/-dfxcb.l';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 
   gotoAmazon() {
-    const a = document.createElement('a');
-    a.href = 'https://www.amazon.com/dp/1320985270';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.click();
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://www.amazon.com/dp/1320985270', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://www.amazon.com/dp/1320985270';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
   }
 }
