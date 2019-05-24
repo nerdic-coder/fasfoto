@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
@@ -9,7 +9,7 @@ declare var RSSParser;
   templateUrl: 'pictures.page.html',
   styleUrls: ['pictures.page.scss']
 })
-export class PicturesPage implements OnInit  {
+export class PicturesPage  {
 
   pictures: any;
 
@@ -19,13 +19,26 @@ export class PicturesPage implements OnInit  {
   ) {
   }
 
-  async ngOnInit() {
-    const parser = new RSSParser();
-    let feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://queryfeed.net/instagram?q=r3l04d3d');
-    if (this.platform.is('cordova')) {
-      feed = await parser.parseURL('https://queryfeed.net/instagram?q=r3l04d3d');
+  async ionViewDidEnter() {
+    if (!this.pictures) {
+      try {
+        const parser = new RSSParser();
+        let feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://queryfeed.net/instagram?q=r3l04d3d');
+        if (this.platform.is('cordova')) {
+          feed = await parser.parseURL('https://queryfeed.net/instagram?q=r3l04d3d');
+        }
+        this.pictures = feed.items;
+      } catch (error) {
+        this.pictures = [
+          {
+            enclosure: {
+              url: 'assets/profile.jpg'
+            },
+            title: 'Fredrik'
+          }
+        ];
+      }
     }
-    this.pictures = feed.items;
   }
 
   open() {
