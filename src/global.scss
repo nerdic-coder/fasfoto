@@ -15,3 +15,7 @@ ion-content, ion-footer {
     --padding-start: env(safe-area-inset-left);
     --padding-bottom: env(safe-area-inset-bottom);
 }
+
+ion-item {
+    --background-hover: #111;
+}
