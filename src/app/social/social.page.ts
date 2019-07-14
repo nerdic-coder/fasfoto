@@ -27,6 +27,18 @@ export class SocialPage {
     }
   }
 
+  gotoEyeem() {
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://www.eyeem.com/u/30100712', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://www.eyeem.com/u/30100712';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
+  }
+
   gotoFacebook() {
     if (this.platform.is('cordova')) {
       this.iab.create('https://www.facebook.com/pg/FAsFotos/', '_system');
