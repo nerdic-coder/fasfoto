@@ -17,10 +17,10 @@ export class StorePage {
 
   open() {
     if (this.platform.is('cordova')) {
-      this.iab.create('https://shop.spreadshirt.se/FAsFotos', '_system');
+      this.iab.create('https://shop.spreadshirt.se/FAsFotos/', '_system');
     } else {
       const a = document.createElement('a');
-      a.href = 'https://shop.spreadshirt.se/FAsFotos';
+      a.href = 'https://shop.spreadshirt.se/FAsFotos/';
       a.target = '_system';
       a.rel = 'noopener';
       a.click();
