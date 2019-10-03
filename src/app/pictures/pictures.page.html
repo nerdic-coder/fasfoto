@@ -11,7 +11,7 @@
   <ion-slides pager="true">
     <ion-slide *ngFor="let picture of pictures">
       <ion-card>
-        <ion-img [src]="picture.enclosure.url"></ion-img>
+        <img [src]="picture.imageurl" />
         <ion-card-content>{{ picture.title }}</ion-card-content>
       </ion-card>
     </ion-slide>
