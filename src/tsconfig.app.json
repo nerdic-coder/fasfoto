@@ -3,10 +3,11 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
-    "module": "es2015"
+    "module": "esnext"
   },
   "angularCompilerOptions": {
-    "enableIvy": false
+    "enableIvy": true,
+    "allowEmptyCodegenFiles": true
   },
   "exclude": [
     "test.ts",

@@ -54,8 +54,10 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleBlackOpaque();
-      this.splashScreen.hide();
+      if (this.platform.is('cordova')) {
+        this.statusBar.styleBlackOpaque();
+        this.splashScreen.hide();
+      }
     });
     addToHomescreen();
   }
