@@ -9,27 +9,27 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'store',
-    loadChildren: './store/store.module#StorePageModule'
+    loadChildren: () => import('./store/store.module').then(m => m.StorePageModule)
   },
   {
     path: 'pictures',
-    loadChildren: './pictures/pictures.module#PicturesPageModule'
+    loadChildren: () => import('./pictures/pictures.module').then(m => m.PicturesPageModule)
   },
   {
     path: 'videos',
-    loadChildren: './videos/videos.module#VideosPageModule'
+    loadChildren: () => import('./videos/videos.module').then(m => m.VideosPageModule)
   },
   {
     path: 'books',
-    loadChildren: './books/books.module#BooksPageModule'
+    loadChildren: () => import('./books/books.module').then(m => m.BooksPageModule)
   },
   {
     path: 'social',
-    loadChildren: './social/social.module#SocialPageModule'
+    loadChildren: () => import('./social/social.module').then(m => m.SocialPageModule)
   }
 ];
 

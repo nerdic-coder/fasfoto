@@ -30,7 +30,7 @@ export class AppComponent {
     {
       title: 'Butik',
       url: '/store',
-      icon: 'appstore'
+      icon: 'logo-apple-appstore'
     },
     {
       title: 'Böcker',

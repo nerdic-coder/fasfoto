@@ -2,15 +2,13 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "baseUrl": "./",
-    "module": "esnext"
-  },
+    "baseUrl": "./"
+},
   "angularCompilerOptions": {
-    "enableIvy": true,
     "allowEmptyCodegenFiles": true
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
+  "files": [
+    "main.ts",
+    "polyfills.ts"
   ]
 }
