@@ -106,4 +106,16 @@ export class SocialPage {
       a.click();
     }
   }
+  
+  gotoYoupic() {
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://youpic.com/photographer/FredrikAxelssonFAsFotos/', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://youpic.com/photographer/FredrikAxelssonFAsFotos/';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
+  }
 }
