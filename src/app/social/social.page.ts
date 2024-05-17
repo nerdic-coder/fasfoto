@@ -27,6 +27,18 @@ export class SocialPage {
     }
   }
 
+  gotoTwitch() {
+    if (this.platform.is('cordova')) {
+      this.iab.create('https://www.twitch.tv/r3l04d3d88', '_system');
+    } else {
+      const a = document.createElement('a');
+      a.href = 'https://www.twitch.tv/r3l04d3d88';
+      a.target = '_system';
+      a.rel = 'noopener';
+      a.click();
+    }
+  }
+
   gotoEyeem() {
     if (this.platform.is('cordova')) {
       this.iab.create('https://www.eyeem.com/u/30100712', '_system');
