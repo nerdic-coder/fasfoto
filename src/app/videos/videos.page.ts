@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { Platform } from '@ionic/angular';
 
 declare var RSSParser;
@@ -16,7 +15,6 @@ export class VideosPage {
 
   constructor(
     private sanitizer: DomSanitizer,
-    private iab: InAppBrowser,
     private platform: Platform) {
 
   }
@@ -38,14 +36,10 @@ export class VideosPage {
   }
 
   open() {
-    if (this.platform.is('cordova')) {
-      this.iab.create('https://www.youtube.com/user/AXFR3DD3', '_system');
-    } else {
-      const a = document.createElement('a');
-      a.href = 'https://www.youtube.com/user/AXFR3DD3';
-      a.target = '_system';
-      a.rel = 'noopener';
-      a.click();
-    }
+    const a = document.createElement('a');
+    a.href = 'https://www.youtube.com/user/AXFR3DD3';
+    a.target = '_system';
+    a.rel = 'noopener';
+    a.click();
   }
 }

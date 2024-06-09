@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-pictures',
@@ -12,8 +10,6 @@ export class PicturesPage  {
   pictures: any;
 
   constructor(
-    private iab: InAppBrowser,
-    private platform: Platform
   ) {
   }
 
@@ -41,35 +37,14 @@ export class PicturesPage  {
           title: 'Skog'
         }
       ];
-      // try {
-      //   const parser = new RSSParser();
-      //   let feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://queryfeed.net/instagram?q=r3l04d3d');
-      //   if (this.platform.is('cordova')) {
-      //     feed = await parser.parseURL('https://queryfeed.net/instagram?q=r3l04d3d');
-      //   }
-      //   this.pictures = feed.items;
-      // } catch (error) {
-      //   this.pictures = [
-      //     {
-      //       enclosure: {
-      //         url: 'https://cdn5.eyeem.com/thumb/9a24d562a8916b3f647979c2d90f2e738ccc9a51-1569511742724/1100/1100'
-      //       },
-      //       title: 'Brygga'
-      //     }
-      //   ];
-      // }
     }
   }
 
   open() {
-    if (this.platform.is('cordova')) {
-      this.iab.create('https://www.mostphotos.com/sv-se/user/fasfotos', '_system');
-    } else {
-      const a = document.createElement('a');
-      a.href = 'https://www.mostphotos.com/sv-se/user/fasfotos';
-      a.target = '_system';
-      a.rel = 'noopener';
-      a.click();
-    }
+    const a = document.createElement('a');
+    a.href = 'https://www.mostphotos.com/sv-se/user/fasfotos';
+    a.target = '_system';
+    a.rel = 'noopener';
+    a.click();
   }
 }
