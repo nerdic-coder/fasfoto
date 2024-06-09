@@ -1,8 +1,5 @@
 {
   "name": "fasfoto",
-  "integrations": {
-    "cordova": {}
-  },
   "type": "angular",
   "id": "809cb616"
 }
