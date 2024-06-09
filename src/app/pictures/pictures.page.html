@@ -9,14 +9,12 @@
 
 <ion-content class="ion-text-center">
   <img src="assets/header3.jpg" />
-  <ion-slides pager="true">
-    <ion-slide *ngFor="let picture of pictures">
-      <ion-card>
-        <img [src]="picture.imageurl" />
-        <ion-card-content>{{ picture.title }}</ion-card-content>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+  <swiper-slide *ngFor="let picture of pictures">
+    <ion-card>
+      <img [src]="picture.imageurl" />
+      <ion-card-content>{{ picture.title }}</ion-card-content>
+    </ion-card>
+  </swiper-slide>
 </ion-content>
 
 <ion-footer class="ion-padding">
