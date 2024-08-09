@@ -15,7 +15,7 @@ export class BooksPage {
 
   gotoIbooks() {
     const a = document.createElement('a');
-    a.href = 'https://itun.es/se/-dfxcb.l';
+    a.href = 'https://www.blurb.com/b/5274402-en-f-rsvunnen-tid-p-land?ebook=577054';
     a.target = '_system';
     a.rel = 'noopener';
     a.click();
