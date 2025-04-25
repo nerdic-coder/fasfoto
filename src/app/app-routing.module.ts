@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./books/books.module').then(m => m.BooksPageModule)
   },
   {
+    path: 'music',
+    loadChildren: () => import('./music/music.module').then(m => m.MusicPageModule)
+  },
+  {
     path: 'social',
     loadChildren: () => import('./social/social.module').then(m => m.SocialPageModule)
   }

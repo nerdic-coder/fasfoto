@@ -21,6 +21,14 @@ export class SocialPage {
     a.click();
   }
 
+  gotoSpotify() {
+    const a = document.createElement('a');
+    a.href = 'https://open.spotify.com/artist/1xZnet1fsrUFJbc1F6fuCl?si=Ig2tSfE3QKm9y3kfmbCBPw';
+    a.target = '_system';
+    a.rel = 'noopener';
+    a.click();
+  }
+
   gotoTwitch() {
     const a = document.createElement('a');
     a.href = 'https://www.twitch.tv/r3l04d3d88';
