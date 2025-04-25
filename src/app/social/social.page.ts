@@ -87,7 +87,7 @@ export class SocialPage {
   
   gotoYoupic() {
     const a = document.createElement('a');
-    a.href = 'https://youpic.com/photographer/FredrikAxelssonFAsFotos/';
+    a.href = 'https://youpic.com/fredrik_axelsson';
     a.target = '_system';
     a.rel = 'noopener';
     a.click();
