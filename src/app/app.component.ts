@@ -37,6 +37,11 @@ export class AppComponent {
       icon: 'book'
     },
     {
+      title: 'Musik',
+      url: '/music',
+      icon: 'musical-notes'
+    },
+    {
       title: 'Sociala medier',
       url: '/social',
       icon: 'people'
